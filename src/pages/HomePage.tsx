@@ -2,6 +2,7 @@
 import { useDispatch } from 'react-redux'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { removeUser } from '../redux/clices/usersSlice/usersSlice'
+import Dashboard from '../components/HomePage/Dashboard'
 
 const HomePage = () => {
   const navigate = useNavigate()
@@ -13,7 +14,8 @@ const HomePage = () => {
   }
 
   return (
-    <div>HomePage
+    <div>
+      <Dashboard/>
       <button onClick={logout}>EXIT</button>
       <Outlet/>
     </div>

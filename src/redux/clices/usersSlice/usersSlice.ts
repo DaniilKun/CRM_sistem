@@ -12,10 +12,12 @@ export interface IUserState {
   jwt: string | null;
   loginErrorMessage?: string ;
   registerErrorMessage?: string ;
+  username: string
 }
 
 const initialState: IUserState = {
   jwt: loadState<IUserPersistenState>(JWT_PERSISTENT_STATE)?.jwt ?? null,
+  username: ''
 };
 
 export const login = createAsyncThunk(
@@ -68,6 +70,9 @@ export const userSlice = createSlice({
       // state.email = null;
       state.jwt = null;
       // state.id = null;
+    },
+    setUserName: (state,action) => {
+      state.username = action.payload.username;
     },
   },
   extraReducers: (builder) => {

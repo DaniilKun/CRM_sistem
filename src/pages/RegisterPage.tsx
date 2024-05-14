@@ -97,7 +97,7 @@ export default function SignUp() {
                   autoComplete="family-name"
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} >
                 <TextField
                   required
                   fullWidth
